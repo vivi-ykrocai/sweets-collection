@@ -1,0 +1,125 @@
+// .sweets-wrapperまでは、sweets-index.scssに記載
+
+.sweets-detail {
+  width: 700px;
+  padding: 24px 40px;
+  margin: 140px auto 40px;
+  overflow: scroll;
+  background-color: #EABCAC;
+  border-radius: 5px;
+  position: relative;
+  z-index: 0;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+
+  &__upper-content {
+    .sweets__title {
+      color: #590c11;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.0;
+      padding: 10px;
+      background-color: #f3a3a8;
+      background-image: radial-gradient(#f5b2b6 20%, transparent 0), radial-gradient(#f5b2b6 20%, transparent 0); /* 水玉の色 */
+      background-position: 0 0, 10px 10px;
+      background-size: 20px 20px;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+    }
+    .sweets__photo {
+      display: block;
+      width: 400px;
+      height: 300px;
+      margin: 20px auto;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
+    }
+  }
+  &__lower-content {
+    &__left {
+      table.sweets__table {
+        width: 100%;
+        tbody {
+          font-size: 14px;
+          tr {
+            border-bottom: solid 2px #EABCAC;
+            &:last-child{
+              border-bottom: none;
+            }
+            th {
+              position: relative;
+              text-align: left;
+              width: 20%;
+              background-color: #f3a3a8;
+              color: white;
+              text-align: center;
+              padding: 10px 0;
+              &:after{
+                display: block;
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                top:calc(50% - 10px);
+                right:-10px;
+                border-left: 10px solid #f3a3a8;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+              }
+            }
+            td {
+              text-align: left;
+              width: 30%;
+              text-align: center;
+              background-color: #eee;
+              color: #590c11;
+              padding: 10px 0;
+            }
+          }
+          // tr {
+          //   th {
+          //     width: 100px;
+          //     border: 1px solid #F5F5F5;
+          //     background-color: #f3a3a8;
+          //     padding: 8px;
+          //   }
+          //   td {
+          //     border: 1px solid #F5F5F5;
+          //     padding: 8px;
+          //   }
+          // }
+        }
+      }
+    }
+    &__right {
+      .sweets__review {
+        font-size: 20px;
+        text-align: center;
+        margin: 5px 0 8px;
+        &__comment {
+          width: 620px;
+          white-space: pre-wrap;
+          padding: 0.2em 0.5em;
+          margin: 20px auto;
+          color: #565656;
+          background-color: #ffeaea;
+          box-shadow: 0px 0px 0px 10px #ffeaea;
+          border: dashed 2px #ffc3c3;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+.sweets-detail:before{
+  border: 1px solid #fff; /* 白い実線 */
+  border-radius: 5px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 4px;
+  z-index: -1;
+ }
