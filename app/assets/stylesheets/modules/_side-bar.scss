@@ -1,0 +1,17 @@
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  padding-top: 100px;
+  background-color: #874E4C;
+  .monthly {
+    color: cornsilk;
+    width: 280px;
+    height: 40px;
+    margin: 5px auto;
+    .month-link {
+      color: cornsilk;
+      line-height: 40px;
+      text-decoration: none;
+    }
+  }
+}
