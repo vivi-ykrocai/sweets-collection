@@ -1,17 +1,22 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= render partial: 'sweets/header', locals: { }
+
+.account-wrapper
+  .account-page
+    .account-page__header
+      %h2 Log in
+    .account-page__body
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :email, value: "email", class:"field__label"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class:"field__input-form", placeholder:"メールアドレスを入力してください", value: ""
+        .field
+          = f.label :password, value: "password", class:"field__label"
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class:"field__input-form", placeholder:"パスワードを入力してください", value: ""
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log in", class:"submit-btn"
