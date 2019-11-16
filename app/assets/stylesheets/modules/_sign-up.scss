@@ -1,0 +1,57 @@
+.account-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 100px;
+  text-align: center;
+  background-image: url(https://d1f5hsy4d47upe.cloudfront.net/8c/8c2e02b66aa5422e9b08f851e1d79eea_t.jpeg);
+  .account-page {
+    width: 600px;
+    margin: 40px auto;
+    color: #590c11;
+    background-color: rgba(135, 78, 76, 0.651);
+    box-shadow: 0 6px 7px rgba(0, 0, 0, 0.32);
+    &__header {
+      height: 60px;
+      h2 {
+        font-size: 40px;
+        font-family: 'Vibes', cursive;
+        line-height: 60px;
+      }
+    }
+    &__body {
+      .field {
+        margin: 15px;
+        &__label {
+          font-size: 20px;
+          font-family: 'Vibes', cursive;
+        }
+        &__input-form {
+          width: 450px;
+          height: 40px;
+        }
+      }
+      .actions {
+        height: 80px;
+        margin: 45px 0 30px;
+        .submit-btn {
+          display: inline-block;
+          width: 440px;
+          height: 34px;
+          font-size: 20px;
+          font-family: 'Vibes', cursive;
+          text-decoration: none;
+          color: #590c11;
+          background-color: #EABCAC;
+          box-shadow: 0px 0px 0px 5px #EABCAC;
+          border: dashed 1px #590c11;
+          cursor: pointer;
+          transition: all  0.5s ease;
+          &:hover {
+            background-color: rgb(240, 156, 128);
+            box-shadow: 0px 0px 0px 5px rgb(240, 156, 128);
+          }
+        }
+      }
+    }
+  }
+}

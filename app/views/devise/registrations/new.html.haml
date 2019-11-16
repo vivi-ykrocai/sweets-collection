@@ -1,21 +1,32 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= render partial: 'sweets/header', locals: { }
+
+.account-wrapper
+  .account-page
+    .account-page__header
+      %h2 Sign up
+
+    .account-page__body
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.label :nickname, value: "nickname", class:"field__label"
+          %br/
+          = f.email_field :nickname, autofocus: true, class:"field__input-form", placeholder:"ニックネームを入力してください", value: ""
+        .field
+          = f.label :image, value: "profile image", class:"field__label"
+          %br/
+          = f.text_field :image, autofocus: true, class: "field__input-form", placeholder:"プロフィール画像のurlを入力してください", value: ""
+        .field
+          = f.label :email, value: "email", class:"field__label"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class:"field__input-form", placeholder:"メールアドレスを入力してください", value: ""
+        .field
+          = f.label :password, value: "password", class:"field__label"
+          %br/
+          = f.password_field :password, autocomplete: "new-password", class:"field__input-form", placeholder:"パスワードを入力してください（6文字以上）", value: ""
+        -# .field
+        -#   = f.label :password_confirmation
+        -#   %br/
+        -#   = f.password_field :password_confirmation, autocomplete: "new-password"
+        .actions
+          = f.submit "Sign up", class:"submit-btn"
