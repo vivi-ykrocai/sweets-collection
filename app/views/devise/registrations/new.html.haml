@@ -11,7 +11,7 @@
         .field
           = f.label :nickname, value: "nickname", class:"field__label"
           %br/
-          = f.email_field :nickname, autofocus: true, class:"field__input-form", placeholder:"ニックネームを入力してください", value: ""
+          = f.text_field :nickname, autofocus: true, class:"field__input-form", placeholder:"ニックネームを入力してください", value: ""
         .field
           = f.label :image, value: "profile image", class:"field__label"
           %br/
@@ -24,9 +24,5 @@
           = f.label :password, value: "password", class:"field__label"
           %br/
           = f.password_field :password, autocomplete: "new-password", class:"field__input-form", placeholder:"パスワードを入力してください（6文字以上）", value: ""
-        -# .field
-        -#   = f.label :password_confirmation
-        -#   %br/
-        -#   = f.password_field :password_confirmation, autocomplete: "new-password"
         .actions
           = f.submit "Sign up", class:"submit-btn"

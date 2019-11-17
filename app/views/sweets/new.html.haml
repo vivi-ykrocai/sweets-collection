@@ -1,0 +1,36 @@
+= render partial: 'sweets/header', locals: { }
+
+.sweets-post-wrapper
+  .sweets-post-wrapper__inner
+    .sweets-post-wrapper__inner__title
+      〜 Sweets Review 〜
+    .sweets-post-wrapper__inner__contents
+      = form_for @sweet do |f|
+        .sweets-form
+          = f.label "タイトル", class:"sweets-form__label"
+          = f.text_field :title, placeholder: "表示するタイトルを入れてください", class: "sweets-form__input"
+        .sweets-form
+          = f.label "画像", class:"sweets-form__label"
+          = f.text_field :image, placeholder: "画像のURLを入れてください", class: "sweets-form__input"
+        .sweets-form
+          = f.label "訪問日", class:"sweets-form__label"
+          = f.date_select :visit_day, placeholder: "訪問日を入れてください", class: "sweets-form__input"
+        .sweets-form
+          = f.label "店名", class:"sweets-form__label"
+          = f.text_field :shop_name, placeholder: "店名を入れてください", class: "sweets-form__input"
+        .sweets-form
+          = f.label "場所", class:"sweets-form__label"
+          = f.text_field :shop_area, placeholder: "場所を入れてください", class: "sweets-form__input"
+        .sweets-form
+          = f.label "メニュー名", class:"sweets-form__label"
+          = f.text_field :menu, placeholder: "メニュー名を入れてください", class: "sweets-form__input"
+        .sweets-form
+          = f.label "評価", class:"sweets-form__label"
+          = f.select :rate, [ ["1",1], ["2",2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9], ["10", 10] ], prompt: "評価を選択してください", class: "sweets-form__input"
+        .sweets-form.sweets-comment
+          = f.label "コメント", class:"sweets-form__label"
+          = f.text_area :comment, placeholder: "スイーツのレビューを書いてください", class: "sweets-form__input"
+        .sweets-actions
+          = f.submit "レビューを登録する", class:"sweets-submit-btn"
+      
+

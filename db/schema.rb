@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_075108) do
+ActiveRecord::Schema.define(version: 2019_11_16_070814) do
+
+  create_table "sweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "image", null: false
+    t.date "visit_day", null: false
+    t.string "shop_name", null: false
+    t.string "shop_area", null: false
+    t.string "menu", null: false
+    t.integer "rate"
+    t.text "comment", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sweets_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -26,4 +41,5 @@ ActiveRecord::Schema.define(version: 2019_11_13_075108) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sweets", "users"
 end
