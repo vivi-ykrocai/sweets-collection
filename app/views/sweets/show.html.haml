@@ -7,43 +7,37 @@
     .sweets-detail
       .sweets-detail__upper-content
         .sweets__title
-          クリーム増量️⭐️ふわふわパンケーキ⭐
+          = @sweet.title
         .sweets__image
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets__photo"
+          = image_tag "#{@sweet.image}", class:"sweets__photo"
       .sweets-detail__lower-content
         .sweets-detail__lower-content__left
           %table.sweets__table
             %tbody
               %tr
                 %th 投稿者
-                %td まめすけ
+                %td
+                  = link_to "#", class:"td__link" do
+                    = @sweet.user.nickname
                 %th 訪問日
-                %td 2019.11.14
+                %td
+                  = @sweet.visit_day
               %tr
                 %th 店名
-                %td カフェルグレ
+                %td
+                  = @sweet.shop_name
                 %th 場所
-                %td 銀座
+                %td
+                  = @sweet.shop_area
               %tr
                 %th メニュー名
-                %td ホールケーキ
+                %td
+                  = @sweet.menu
                 %th 評価
-                %td 3.5
+                %td
+                  = @sweet.rate
         .sweets-detail__lower-content__right
           .sweets__review
-            〜comment〜
+            = "~ review ~"
           .sweets__review__comment
-            季節のフレッシュフルーツパンケーキ1,390円（税込）
-            ふわふわのパンケーキに季節のフルーツをたっぷりとトッピング！
-
-            ふっくら焼きあがったパンケーキはノーマルの幸せのパンケーキと同じ。
-            いちご、キウイ、バナナ、パイナップル、りんご、ピンクグレープフルーツがたっぷりと添えられています。
-
-            やわらかめのホイップクリーム。
-            固くないところがまたいい！
-            やさしい甘さと食感です。
-
-            お店に着くと階段が行列！
-            予約をしていたので行列を横目に受付で声を掛けるとすぐに対応してくれました。
-            予約なしの場合は地下1階で一度名前を書かないといけないらしく、並んでるだけだとだめなんだなぁ…と思いました。
-    
+            = @sweet.comment

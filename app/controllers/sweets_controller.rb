@@ -1,5 +1,6 @@
 class SweetsController < ApplicationController
   def index
+    @sweets = Sweet.all.order("id DESC").page(params[:page]).per(8)
   end
 
   def new
@@ -12,6 +13,7 @@ class SweetsController < ApplicationController
   end
 
   def show
+    @sweet = Sweet.find(params[:id])
   end
 
   private

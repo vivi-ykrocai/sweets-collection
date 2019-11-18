@@ -5,64 +5,10 @@
 
   .sweets-wrapper
     .sweets-contents
-      .sweets-box
-        = link_to "/sweets/:id", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-      .sweets-box
-        = link_to "#", class:"sweets-box__link" do
-          = image_tag "https://magia.tokyo/wp-content/uploads/2016/09/slider-1-640x450.jpg", class:"sweets-box__image"
-          .sweets-box__title
-            クリーム増量️⭐️ふわふわパンケーキ⭐
-
+      - @sweets.each do |sweet|
+        .sweets-box
+          = link_to sweet_path(sweet), class:"sweets-box__link" do
+            = image_tag "#{sweet.image}", class:"sweets-box__image"
+            .sweets-box__title
+              = sweet.title
+    = paginate(@sweets)
