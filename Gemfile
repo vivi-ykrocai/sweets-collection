@@ -68,3 +68,4 @@ gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'pry-rails'
 gem 'devise'
+gem 'kaminari'
