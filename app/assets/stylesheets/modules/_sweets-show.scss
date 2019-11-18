@@ -46,7 +46,6 @@
             }
             th {
               position: relative;
-              text-align: left;
               width: 20%;
               background-color: #f3a3a8;
               color: white;
@@ -66,12 +65,15 @@
               }
             }
             td {
-              text-align: left;
               width: 30%;
               text-align: center;
               background-color: #eee;
               color: #590c11;
-              padding: 10px 0;
+              padding: 10px 8px;
+              .td__link {
+                color: #0199E8;
+                text-decoration: none;
+              }
             }
           }
         }
@@ -79,8 +81,10 @@
     }
     &__right {
       .sweets__review {
-        font-size: 20px;
+        font-size: 30px;
+        font-family: 'Vibes', cursive;
         text-align: center;
+        color: #590c11;
         margin: 5px 0 8px;
         &__comment {
           width: 620px;
