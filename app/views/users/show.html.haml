@@ -1,0 +1,44 @@
+= render partial: 'sweets/header', locals: { }
+
+.user-mypage-wrapper
+  .user-profile-wrapper
+    .user-profile-wrapper__inner
+      .user-profile-wrapper__inner__upper
+        .user__image
+          = image_tag "#{@user.image}", class:"user__image__photo"
+        .user__nickname
+          = @user.nickname
+        .user__post
+          = "（ 投稿数 #{@user.sweets.length} ）" 
+      .user-profile-wrapper__inner__lower
+        .user__comment
+          甘いものが好きです。
+          ケーキは友達です。
+          よろしくおねがいします。
+          甘いものが好きです。
+          ケーキは友達です。
+          よろしくおねがいします。
+        .user__edit
+          = link_to "#", class:"user__edit__link" do
+            プロフィールを編集
+          
+  .sweets-contents
+    -# お気に入り機能実装後に下記の内容(お気に入り一覧)は置き換える
+    .sweets-contents__title
+      %p
+        = "#{@user.nickname}さんのお気に入り一覧"
+    - @user.sweets.order("id DESC").each do |sweet|
+      .sweets-box
+        = link_to sweet_path(sweet), class:"sweets-box__link" do
+          = image_tag "#{sweet.image}", class:"sweets-box__image"
+          .sweets-box__title
+            = sweet.title
+    .sweets-contents__title
+      %p
+        = "#{@user.nickname}さんの投稿一覧"
+    - @user.sweets.order("id DESC").each do |sweet|
+      .sweets-box
+        = link_to sweet_path(sweet), class:"sweets-box__link" do
+          = image_tag "#{sweet.image}", class:"sweets-box__image"
+          .sweets-box__title
+            = sweet.title

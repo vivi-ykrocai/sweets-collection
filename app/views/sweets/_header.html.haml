@@ -6,7 +6,7 @@
           Sweets Collection
     .header-contents-right
       - if user_signed_in?
-        = link_to "#", class: "header__btn" do
+        = link_to user_path(current_user.id), class: "header__btn" do
           マイページ
         = link_to new_sweet_path, class: "header__btn" do
           投稿する
