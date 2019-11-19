@@ -1,0 +1,118 @@
+.user-mypage-wrapper {
+  display: flex;
+  .user-profile-wrapper {
+    width: 300px;
+    height: 100vh;
+    padding-top: 100px;
+    background-color: #874E4C;
+    &__inner {
+      margin: 30px 15px;
+      &__upper {
+        .user__image {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background-color: #EABCAC;
+          margin: 0 auto;
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+          &__photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+          }
+        }
+        .user__nickname {
+          color: cornsilk;
+          font-size: 20px;
+          padding-top: 5px;
+          text-align: center;
+
+        }
+        .user__post {
+          color: cornsilk;
+          font-size: 14px;
+          padding-top: 5px;
+          text-align: center;
+        }
+      }
+      &__lower {
+        .user__comment {
+          width: 220px;
+          height: 250px;
+          white-space: pre-wrap;
+          padding: 0.2em 0.5em;
+          margin: 15px auto;
+          background: cornsilk;
+          box-shadow: 0px 0px 0px 10px cornsilk;
+          border: dashed 2px #874E4C;
+          overflow: scroll;
+        }
+        .user__edit {
+          width: 200px;
+          margin: 20px auto 0;
+          background-color: #EE817B;
+          border-radius: 15px;
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+          &__link {
+            display: block;
+            color: cornsilk;
+            text-decoration: none;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  
+  // ユーザーのお気に入り及び投稿一覧
+  .sweets-contents {
+    width: 950px;
+    height: 100vh;
+    padding-top: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    &__title {
+      width: 100%;
+      margin-top: 10px;
+      background-color: rgba(135, 78, 76, 0.699);
+      border-top: 8px solid #874E4C;
+      border-bottom: 8px solid #874E4C;
+      p {
+        color: cornsilk;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 30px;
+        margin-left: 30px;
+      }    
+    }
+    .sweets-box {
+      width: 200px;
+      height: 275px;
+      margin-top: 20px;
+      margin-left: 30px;
+      background-color: #EABCAC;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
+      transition: all 0.6s ease 0s;
+      &:hover {
+        transform: scale(1.05, 1.05);
+      }
+      &__link {
+        text-decoration: none;
+        .sweets-box__image {
+          display: block;
+          width: 190px;
+          height: 190px;
+          margin: 5px auto;
+        }
+        .sweets-box__title {
+          display: inline-block;
+          padding: 5px 8px;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
