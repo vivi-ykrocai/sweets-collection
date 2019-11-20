@@ -14,6 +14,7 @@ class SweetsController < ApplicationController
 
   def show
     @sweet = Sweet.find(params[:id])
+    @like = Like.new
   end
 
   private
