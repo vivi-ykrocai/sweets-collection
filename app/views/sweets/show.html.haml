@@ -10,6 +10,17 @@
           = @sweet.title
         .sweets__image
           = image_tag "#{@sweet.image}", class:"sweets__photo"
+        - if @sweet.user.id == current_user.id
+          .sweets__like-btn
+            = link_to "", class:"white-iine-btn", method: :post, remote: true do
+              = fa_icon 'heart-o'
+              = @sweet.likes_count
+              %br
+              いいね!
+        - else
+          #sweets__likes
+            = render partial: 'likes/like-btn', locals: { sweet: @sweet}
+
       .sweets-detail__lower-content
         .sweets-detail__lower-content__left
           %table.sweets__table

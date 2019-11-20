@@ -12,6 +12,7 @@
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 
   &__upper-content {
+    position: relative;
     .sweets__title {
       color: #590c11;
       font-size: 24px;
@@ -31,6 +32,32 @@
       height: 300px;
       margin: 20px auto;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
+    }
+
+    .sweets__like-btn {
+      position: absolute;
+      top: 325px;
+      left: 525px;
+      width: 80px;
+      height: 40px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+      .red-iine-btn {
+        display: block;
+        background-color: white;
+        color: red;
+        text-decoration: none;
+        border: 1px solid red;
+        border-radius: 30px;
+      }
+      .white-iine-btn {
+        display: block;
+        background-color: lightgray;
+        color: #565656;
+        text-decoration: none;
+        border-radius: 30px;
+      }
     }
   }
   &__lower-content {

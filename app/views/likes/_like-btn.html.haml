@@ -1,0 +1,13 @@
+.sweets__like-btn
+  - if user_signed_in? && current_user.already_liked?(sweet)
+    = link_to sweet_like_path(sweet, current_user.id), method: :delete, class:"red-iine-btn", remote: true do
+      = fa_icon 'heart'
+      = sweet.likes_count
+      %br
+      いいね!
+  - else
+    = link_to sweet_likes_path(sweet), class:"white-iine-btn", method: :post, remote: true do
+      = fa_icon 'heart-o'
+      = sweet.likes_count
+      %br
+      いいね!
