@@ -22,28 +22,31 @@
           = link_to "#", class:"user__edit__link" do
             プロフィールを編集
           
-  .sweets-contents
-    .sweets-contents__title
-      %p
-        = "#{@user.nickname}さんのお気に入り一覧"
-    -if @likes.length == 0
-      .nothing
-        お気に入りはまだありません
-    - @likes.each do |like|
-      .sweets-box
-        = link_to sweet_path(like.sweet), class:"sweets-box__link" do
-          = image_tag "#{like.sweet.image}", class:"sweets-box__image"
-          .sweets-box__title
-            = like.sweet.title
-    .sweets-contents__title
-      %p
-        = "#{@user.nickname}さんの投稿一覧"
-    -if @user.sweets.length == 0
-      .nothing
-        投稿はまだありません
-    - @user.sweets.order("id DESC").each do |sweet|
-      .sweets-box
-        = link_to sweet_path(sweet), class:"sweets-box__link" do
-          = image_tag "#{sweet.image}", class:"sweets-box__image"
-          .sweets-box__title
-            = sweet.title
+  .sweets-wrapper
+    .sweets-contents
+      .sweets-contents__title
+        %p
+          = "#{@user.nickname}さんのお気に入り一覧"
+      .sweets-boxes
+        -if @likes.length == 0
+          .nothing
+            お気に入りはまだありません
+        - @likes.each do |like|
+          .sweets-box
+            = link_to sweet_path(like.sweet), class:"sweets-box__link" do
+              = image_tag "#{like.sweet.image}", class:"sweets-box__image"
+              .sweets-box__title
+                = like.sweet.title
+      .sweets-contents__title
+        %p
+          = "#{@user.nickname}さんの投稿一覧"
+      .sweets-boxes
+        -if @user.sweets.length == 0
+          .nothing
+            投稿はまだありません
+        - @user.sweets.order("id DESC").each do |sweet|
+          .sweets-box
+            = link_to sweet_path(sweet), class:"sweets-box__link" do
+              = image_tag "#{sweet.image}", class:"sweets-box__image"
+              .sweets-box__title
+                = sweet.title

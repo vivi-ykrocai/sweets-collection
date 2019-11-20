@@ -65,59 +65,70 @@
   }
   
   // ユーザーのお気に入り及び投稿一覧
-  .sweets-contents {
-    width: 950px;
+  .sweets-wrapper {
+    width: calc(100vw - 300px);
     height: 100vh;
-    padding-top: 100px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    background-image: url("https://ja.tokkoro.com/picsup/3089883-cake_chocolate_chocolate-cake_cocoa_delicious_dessert_food_sweets_table_tasty_tiramisu.jpg");
+    background-size: cover;
     overflow: scroll;
-    &__title {
-      width: 100%;
-      height: 45px;
-      margin-top: 10px;
-      background-color: rgba(135, 78, 76, 0.699);
-      border-top: 8px solid #874E4C;
-      border-bottom: 8px solid #874E4C;
-      p {
+    .sweets-contents {
+      width: 950px;
+      padding-top: 100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: scroll;
+      &__title {
+        width: 100%;
+        height: 45px;
+        margin-top: 10px;
+        background-color: rgba(135, 78, 76, 0.699);
+        border-top: 8px solid #874E4C;
+        border-bottom: 8px solid #874E4C;
+        p {
+          color: cornsilk;
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 30px;
+          margin-left: 30px;
+        }    
+      }
+      .nothing {
         color: cornsilk;
         font-size: 20px;
-        font-weight: bold;
-        line-height: 30px;
-        margin-left: 30px;
-      }    
-    }
-    .nothing {
-      color: cornsilk;
-      font-size: 20px;
-      text-align: center;
-      margin: 40px auto 30px;
-    }
-    .sweets-box {
-      width: 200px;
-      height: 275px;
-      margin-top: 20px;
-      margin-left: 30px;
-      background-color: #EABCAC;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
-      transition: all 0.6s ease 0s;
-      &:hover {
-        transform: scale(1.05, 1.05);
+        text-align: center;
+        margin: 40px auto 30px;
       }
-      &__link {
-        text-decoration: none;
-        .sweets-box__image {
-          display: block;
-          width: 190px;
-          height: 190px;
-          margin: 5px auto;
-        }
-        .sweets-box__title {
-          display: inline-block;
-          padding: 5px 8px;
-          text-decoration: none;
-          color: black;
+      .sweets-boxes {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .sweets-box {
+          width: 200px;
+          height: 275px;
+          margin-top: 20px;
+          margin-left: 30px;
+          background-color: #EABCAC;
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.32);
+          transition: all 0.6s ease 0s;
+          &:hover {
+            transform: scale(1.05, 1.05);
+          }
+          &__link {
+            text-decoration: none;
+            .sweets-box__image {
+              display: block;
+              width: 190px;
+              height: 190px;
+              margin: 5px auto;
+            }
+            .sweets-box__title {
+              display: inline-block;
+              padding: 5px 8px;
+              text-decoration: none;
+              color: black;
+            }
+          }
         }
       }
     }
