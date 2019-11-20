@@ -23,19 +23,24 @@
             プロフィールを編集
           
   .sweets-contents
-    -# お気に入り機能実装後に下記の内容(お気に入り一覧)は置き換える
     .sweets-contents__title
       %p
         = "#{@user.nickname}さんのお気に入り一覧"
-    - @user.sweets.order("id DESC").each do |sweet|
+    -if @likes.length == 0
+      .nothing
+        お気に入りはまだありません
+    - @likes.each do |like|
       .sweets-box
-        = link_to sweet_path(sweet), class:"sweets-box__link" do
-          = image_tag "#{sweet.image}", class:"sweets-box__image"
+        = link_to sweet_path(like.sweet), class:"sweets-box__link" do
+          = image_tag "#{like.sweet.image}", class:"sweets-box__image"
           .sweets-box__title
-            = sweet.title
+            = like.sweet.title
     .sweets-contents__title
       %p
         = "#{@user.nickname}さんの投稿一覧"
+    -if @user.sweets.length == 0
+      .nothing
+        投稿はまだありません
     - @user.sweets.order("id DESC").each do |sweet|
       .sweets-box
         = link_to sweet_path(sweet), class:"sweets-box__link" do
