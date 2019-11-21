@@ -3,15 +3,83 @@
   height: 100vh;
   padding-top: 100px;
   background-color: #874E4C;
-  .monthly {
-    color: cornsilk;
-    width: 280px;
-    height: 40px;
-    margin: 5px auto;
-    .month-link {
-      color: cornsilk;
-      line-height: 40px;
-      text-decoration: none;
+  &__inner {
+    width: 260px;
+    height: 95%;
+    margin: 20px auto 10px;
+    .ranking-contents {
+      width: 100%;
+      height: 150px;
+      background-color: bisque;
+      margin-bottom: 20px;
+      .ranking-box {
+        &__title {
+          font-size: 18px;
+          font-family: 'Vibes', cursive;
+          height: 30px;
+          line-height: 30px;
+          background-color: #EABCAC;
+          text-align: center;
+          .ranking-icon {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 600;
+          }
+        }
+        &__body {
+          .ranking__link {
+            display: block;
+            font-weight: 600;
+            color: #590c11;
+            text-decoration: none;
+            margin: 10px 10px 0;
+          }
+        }
+      }
+    }
+    .search-contents {
+      width: 100%;
+      height: 410px;
+      background-color: bisque;
+      .search-box {
+        &__title {
+          font-size: 18px;
+          font-family: 'Vibes', cursive;
+          height: 30px;
+          line-height: 30px;
+          background-color: #EABCAC;
+          text-align: center;
+        }
+        &__body {
+          .search-form {
+            margin: 10px;
+            &__title {
+              font-weight: bold;
+              color: #590c11;
+              margin-bottom: 4px;
+            }
+            &__body {
+              .search-text {
+                font-size: 14px;
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+              }
+              .search-btn {
+                display: block;
+                width: 60px;
+                height: 30px;
+                color: #590c11;
+                font-size: 13px;
+                background-color: #EABCAC;
+                border-style: none;
+                border-radius: 20px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32);
+                margin: 5px 0 0 auto;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
