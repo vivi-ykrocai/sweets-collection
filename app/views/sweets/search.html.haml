@@ -1,0 +1,35 @@
+= render partial: 'sweets/header', locals: { }
+
+.main-wrapper
+  = render partial: 'sweets/side-bar', locals: { }
+
+  .sweets-wrapper
+    .sweets-contents
+      .sweets-contents__title
+        %p
+          = "「 #{@search_keyword} 」の検索結果"
+      .sweets-boxes
+        - if @sweets_title.present?
+          - @sweets_title.each do |sweet|
+            .sweets-box
+              = link_to sweet_path(sweet), class:"sweets-box__link" do
+                = image_tag "#{sweet.image}", class:"sweets-box__image"
+                .sweets-box__title
+                  = sweet.title
+        - elsif @sweets_shop_name.present?
+          - @sweets_shop_name.each do |sweet|
+            .sweets-box
+              = link_to sweet_path(sweet), class:"sweets-box__link" do
+                = image_tag "#{sweet.image}", class:"sweets-box__image"
+                .sweets-box__title
+                  = sweet.title
+        - elsif @sweets_shop_area.present?
+          - @sweets_shop_area.each do |sweet|
+            .sweets-box
+              = link_to sweet_path(sweet), class:"sweets-box__link" do
+                = image_tag "#{sweet.image}", class:"sweets-box__image"
+                .sweets-box__title
+                  = sweet.title
+        - else
+          .nothing
+            該当ありませんでした
