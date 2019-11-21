@@ -5,10 +5,14 @@
 
   .sweets-wrapper
     .sweets-contents
-      - @sweets.each do |sweet|
-        .sweets-box
-          = link_to sweet_path(sweet), class:"sweets-box__link" do
-            = image_tag "#{sweet.image}", class:"sweets-box__image"
-            .sweets-box__title
-              = sweet.title
-    = paginate(@sweets)
+      .sweets-contents__title
+        %p
+          新着レビュー一覧
+      .sweets-boxes
+        - @sweets.each do |sweet|
+          .sweets-box
+            = link_to sweet_path(sweet), class:"sweets-box__link" do
+              = image_tag "#{sweet.image}", class:"sweets-box__image"
+              .sweets-box__title
+                = sweet.title
+      = paginate(@sweets)
