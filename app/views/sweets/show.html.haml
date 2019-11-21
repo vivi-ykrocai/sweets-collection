@@ -52,3 +52,28 @@
             = "~ review ~"
           .sweets__review__comment
             = @sweet.comment
+
+    .sweets-comments
+      .sweets-comments__upper-content
+        = form_for [@sweet, @comment] do |f|
+          .comment-form
+            = f.text_area :text, placeholder: "このレビューに対するコメントを入れてください", class: "comment-form__text"
+          .comment-action
+            = f.submit "レビューにコメントする", class:"comment-btn"
+      .sweets-comments__lower-content
+        - if @comments.present?
+          - @comments.each do |comment|
+            .comment-box
+              .comment-box__left
+                .user-avater
+                  = image_tag "#{comment.user.image}", class:"user-avater__photo"
+              .comment-box__right
+                .user-comment
+                  .user-comment__upper
+                    .user-name
+                      = link_to "#", class:"user-name__link" do
+                        = comment.user.nickname
+                    .user-comment__daytime
+                      = comment.created_at.strftime("%Y-%m-%d %H:%M")
+                  .user-comment__text
+                    = comment.text
