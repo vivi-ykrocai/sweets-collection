@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_035255) do
+ActiveRecord::Schema.define(version: 2019_11_21_040146) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "sweet_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sweet_id"], name: "index_comments_on_sweet_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -52,6 +62,8 @@ ActiveRecord::Schema.define(version: 2019_11_20_035255) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "sweets"
+  add_foreign_key "comments", "users"
   add_foreign_key "likes", "sweets"
   add_foreign_key "likes", "users"
   add_foreign_key "sweets", "users"
