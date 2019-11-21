@@ -15,6 +15,8 @@ class SweetsController < ApplicationController
   def show
     @sweet = Sweet.find(params[:id])
     @like = Like.new
+    @comment = Comment.new
+    @comments = @sweet.comments.includes(:user).order("id DESC")
   end
 
   def search
