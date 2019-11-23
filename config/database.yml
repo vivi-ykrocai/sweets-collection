@@ -47,8 +47,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: sweets-collection_production
+#   username: sweets-collection
+#   password: <%= ENV['SWEETS-COLLECTION_DATABASE_PASSWORD'] %>
 production:
   <<: *default
-  database: sweets-collection_production
-  username: sweets-collection
-  password: <%= ENV['SWEETS-COLLECTION_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
