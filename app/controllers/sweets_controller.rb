@@ -1,4 +1,6 @@
 class SweetsController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :search]
+
   def index
     @sweets = Sweet.all.order("id DESC").page(params[:page]).per(8)
   end
@@ -22,13 +24,13 @@ class SweetsController < ApplicationController
   def search
     if params[:keyword1].present?
       @search_keyword = params[:keyword1]
-      @sweets_title = Sweet.where('title LIKE(?)', "%#{params[:keyword1]}%")
+      @sweets_title = Sweet.where('title LIKE(?)', "%#{params[:keyword1]}%").order("id DESC")
     elsif params[:keyword2].present?
       @search_keyword = params[:keyword2]
-      @sweets_shop_name = Sweet.where('shop_name LIKE(?)', "%#{params[:keyword2]}%")
+      @sweets_shop_name = Sweet.where('shop_name LIKE(?)', "%#{params[:keyword2]}%").order("id DESC")
     elsif params[:keyword3].present?
       @search_keyword = params[:keyword3]
-      @sweets_shop_area = Sweet.where('shop_area LIKE(?)', "%#{params[:keyword3]}%")
+      @sweets_shop_area = Sweet.where('shop_area LIKE(?)', "%#{params[:keyword3]}%").order("id DESC")
     end
   end
 
