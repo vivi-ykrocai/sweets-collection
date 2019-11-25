@@ -4,14 +4,14 @@ Sweets Collection
 ## URL
 https://sweets-collection.herokuapp.com/
 
-（テストユーザー）
+＜テストユーザー＞
 * Email：test@gmail.com
 * Password：12345678
 
 
 ## 概要
 お店で食べたスイーツのレビューを投稿できるアプリケーション。
-自分以外が投稿したレビューで気に入ったものあれば、お気に入り登録して管理できます。
+自分以外が投稿したレビューで気に入ったものがあれば、お気に入り登録して管理できます。
 
 ## Demo
 ### トップページ
