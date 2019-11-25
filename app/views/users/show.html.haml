@@ -12,31 +12,32 @@
           = "（ 投稿数 #{@user.sweets.length} ）" 
       .user-profile-wrapper__inner__lower
         .user__comment
-          甘いものが好きです。
-          ケーキは友達です。
-          よろしくおねがいします。
-          甘いものが好きです。
-          ケーキは友達です。
-          よろしくおねがいします。
-        .user__edit
-          = link_to "#", class:"user__edit__link" do
-            プロフィールを編集
+          こんにちは！
+          甘いものが大好きで、カフェ巡りが趣味です！
+          美味しいお店の記録を投稿していきます。
+          気に入ったらお気に入り登録してね！
+          よろしくおねがいします❤️
+        - if @user.id ==current_user.id
+          .user__edit
+            = link_to "#", class:"user__edit__link" do
+              プロフィールを編集
           
   .sweets-wrapper
     .sweets-contents
-      .sweets-contents__title
-        %p
-          = "#{@user.nickname}さんのお気に入り一覧"
-      .sweets-boxes
-        -if @likes.length == 0
-          .nothing
-            お気に入りはまだありません
-        - @likes.each do |like|
-          .sweets-box
-            = link_to sweet_path(like.sweet), class:"sweets-box__link" do
-              = image_tag "#{like.sweet.image}", class:"sweets-box__image"
-              .sweets-box__title
-                = like.sweet.title
+      - if @user.id ==current_user.id
+        .sweets-contents__title
+          %p
+            = "#{@user.nickname}さんのお気に入り一覧"
+        .sweets-boxes
+          -if @likes.length == 0
+            .nothing
+              お気に入りはまだありません
+          - @likes.each do |like|
+            .sweets-box
+              = link_to sweet_path(like.sweet), class:"sweets-box__link" do
+                = image_tag "#{like.sweet.image}", class:"sweets-box__image"
+                .sweets-box__title
+                  = like.sweet.title
       .sweets-contents__title
         %p
           = "#{@user.nickname}さんの投稿一覧"
