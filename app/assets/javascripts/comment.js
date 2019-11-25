@@ -46,7 +46,7 @@ jQuery(document).on('turbolinks:load', function(){
         $('.sweets-wrapper').animate({ scrollTop: $('.sweets-wrapper')[0].scrollHeight });
       })
       .fail(function(){
-        alert('error');
+        alert('コメントを入力してください');
       })
     })
   })

@@ -22,6 +22,13 @@
     z-index: -1;
   }
 
+  // 投稿が失敗した際のフラッシュメッセージ
+  .post-flash {
+    font-size: 24px;
+    color: red;
+    text-align: center;
+  }
+
   &__inner {
     width: 600px;
     margin: 0 auto;

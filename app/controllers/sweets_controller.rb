@@ -10,8 +10,13 @@ class SweetsController < ApplicationController
   end
 
   def create
-    Sweet.create(sweet_params)
-    redirect_to root_path
+    @sweet = Sweet.new(sweet_params)
+    if @sweet.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = '全ての項目を入力してください'
+      render :new
+    end
   end
 
   def show

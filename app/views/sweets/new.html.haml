@@ -1,6 +1,8 @@
 = render partial: 'sweets/header', locals: { }
 
 .sweets-post-wrapper
+  .post-flash
+    = flash[:alert]
   .sweets-post-wrapper__inner
     .sweets-post-wrapper__inner__title
       〜 Sweets Review 〜
