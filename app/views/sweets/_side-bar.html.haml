@@ -1,3 +1,10 @@
+-# ランキング表示機能が完成したらモーダルは削除
+#modal-wrapper
+  #modal-window
+    .modal-message-box
+      現在準備中です
+    %button#modal-close-btn 閉じる
+
 .side-bar
   .side-bar__inner
     
@@ -9,15 +16,15 @@
         .ranking-box__body
           %ul
             %li
-              = link_to "#", class:"ranking__link" do
+              = link_to "#", class:"ranking__link", data: {"turbolinks" => false} do
                 いいね数ランキング
                 = fa_icon 'chevron-right'
             %li
-              = link_to "#", class:"ranking__link" do
+              = link_to "#", class:"ranking__link", data: {"turbolinks" => false} do
                 評価が高い順ランキング
                 = fa_icon 'chevron-right'
             %li
-              = link_to "#", class:"ranking__link" do
+              = link_to "#", class:"ranking__link", data: {"turbolinks" => false} do
                 フォロワー数ランキング
                 = fa_icon 'chevron-right'
 
